@@ -1,7 +1,17 @@
+set up general look
+add shopping api for img (https://fakestoreapi.com/)
+Tests (React testing library)
+    buttons
 SPA (route)
-Tests (check what should test)
 Change js to ts
 
+title (fixed)
+navbar (fixed)
+    home, cart (shows how many items, 99+)
 Home
+    4 items (name, img, price, addtocart button)
 
-Shopping
+cart
+    4 card (name, amt input field, increment/decrement)
+    fake checkout button
+    calculate total on right part

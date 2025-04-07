@@ -1,5 +1,10 @@
 # odin-shopping-cart
+
 https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart
+
+Icons:
+- UXWing : https://uxwing.com/license/
+  - basket-icon : https://uxwing.com/basket-icon/
 
 # React + Vite
 

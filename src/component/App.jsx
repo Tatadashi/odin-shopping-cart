@@ -1,10 +1,10 @@
-import appCSS from '../style/App.module.css'
+import appCSS from '../style/App.module.css';
+import Navbar from './navbar.jsx';
 
 function App() {
   return (
     <div className={appCSS.app}>
-      <h1>Home</h1>
-      <h2>yep</h2>
+      <Navbar />
     </div>
   )
 }
