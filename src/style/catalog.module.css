@@ -1,0 +1,23 @@
+.catalog {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+@media only screen and (max-width: 960px) {
+    .catalog {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .catalog {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .catalog {
+        grid-template-columns: 1fr;
+    }
+}

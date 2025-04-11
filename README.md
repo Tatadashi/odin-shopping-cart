@@ -6,6 +6,9 @@ Icons:
 - UXWing : https://uxwing.com/license/
   - basket-icon : https://uxwing.com/basket-icon/
 
+API:
+- Fake Store API : https://fakestoreapi.com/
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
