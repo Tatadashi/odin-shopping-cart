@@ -1,4 +1,4 @@
-import style from "../style/item.module.css";
+import style from "../../style/Item.module.css";
 
 export default function Item({ product }) {
   return (

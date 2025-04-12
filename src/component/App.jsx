@@ -1,6 +1,6 @@
 import style from "../style/App.module.css";
-import Navbar from "./navbar.jsx";
-import Catalog from "./catalog.jsx";
+import Navbar from "./Navbar.jsx";
+import Catalog from "./home/Catalog.jsx";
 
 function App() {
   return (
