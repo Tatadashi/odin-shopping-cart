@@ -1,11 +1,17 @@
-import Navbar from "./Navbar";
+import style from '../style/Cart.module.css';
+import Navbar from "./Navbar.jsx";
+import Order from './cart/Order.jsx';
+import Subtotal from './Subtotal.jsx';
 
 export default function Cart() {
     return (
-        <div>
-            <Navbar />
-            <h1>Title</h1>
-            <h2>Stuff</h2>
+      <div>
+        <Navbar />
+        <div className={style.content}>
+          {/** orderlist need gap btwn orders*/}
+          <Order />
+          <Subtotal />
         </div>
+      </div>
     );
 }

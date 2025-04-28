@@ -1,4 +1,4 @@
-import style from "../../style/Catalog.module.css";
+import style from "../../style/home/Catalog.module.css";
 import { useState, useEffect } from "react";
 import Item from "./Item.jsx";
 
