@@ -1,8 +1,3 @@
 Tests (React testing library)
     buttons
 Change js to ts
-
-cart
-    4 card (name, amt input field, increment/decrement)
-    fake checkout button
-    calculate total on right part
