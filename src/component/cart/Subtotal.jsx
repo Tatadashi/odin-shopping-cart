@@ -1,4 +1,4 @@
-import style from '../style/cart/Subtotal.module.css'
+import style from '../../style/cart/Subtotal.module.css'
 
 export default function Subtotal() {
     return (

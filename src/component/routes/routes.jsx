@@ -1,4 +1,4 @@
-import App from './App.jsx'
+import App from '../App.jsx'
 import ErrorPage from './Error.jsx';
 import Cart from './Cart.jsx';
 

@@ -1,4 +1,4 @@
-import style from "../style/Navbar.module.css";
+import style from "../../style/routes/Navbar.module.css";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {

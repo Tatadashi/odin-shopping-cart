@@ -10,7 +10,7 @@
 }
 
 .cart {
-    background: no-repeat center url('../assets/basket-icon.svg');
+    background: no-repeat center url('../../assets/basket-icon.svg');
     filter: invert(1);
     position: absolute;
     top: 20px;
