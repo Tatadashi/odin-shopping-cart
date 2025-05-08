@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, vi, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
@@ -21,22 +21,23 @@ describe("Add to Cart", () => {
       },
     },
   ];
-
-  it("updates cart list", async () => {
+  
+  it("updates cart state", async () => {
     const user = userEvent.setup();
+    const mock = vi.fn();
     render(
       <BrowserRouter>
-        <Catalog productList={productList} />
+        <Catalog productList={productList} cart={{}} setCart={mock}/>
       </BrowserRouter>
     );
-    // console.log('a')
-    // const firstButton = screen.getByRole("button", { name: "Add to Cart" });
-    // await user.click(firstButton);
+  
+    const firstButton = screen.getByRole("button", { name: "Add to Cart" });
+    await user.click(firstButton);
 
-    expect(true).toBe(true);
+    expect(mock).toHaveBeenCalledTimes(1);
   });
 
-  it("updates navbar cart number", () => {
+  it("displays correct number of items in navbar cart", () => {
     expect(false).toBe(false);
   });
 });

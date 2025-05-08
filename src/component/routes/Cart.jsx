@@ -1,4 +1,5 @@
 import style from '../../style/routes/Cart.module.css';
+import React from 'react';
 import Navbar from "./Navbar.jsx";
 import Order from '../cart/Order.jsx';
 import Subtotal from '../cart/Subtotal.jsx';

@@ -1,16 +1,25 @@
 import App from '../App.jsx'
 import ErrorPage from './Error.jsx';
 import Cart from './Cart.jsx';
+import { ContextProvider } from './ContextProvider.jsx';
 
 const routes = [
   {
     path: "/",
-    element: <App />,
-    errorElement: <ErrorPage />, 
+    element: (
+      <ContextProvider>
+        <App />
+      </ContextProvider>
+    ),
+    errorElement: <ErrorPage />,
   },
   {
     path: "cart",
-    element: <Cart />,
+    element: (
+      <ContextProvider>
+        <Cart />
+      </ContextProvider>
+    ),
   },
 ];
 

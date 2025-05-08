@@ -1,6 +1,10 @@
 import style from "../../style/home/Item.module.css";
+import React from "react";
+import { Context } from "../routes/Context";
 
-export default function Item({ product, cart, setCart }) {
+export default function Item({ product}) {
+  const { cartItems } = React.useContext(Context);
+  const [cart, setCart] = cartItems;
   const addProduct = () => {
     const copy = cart;
     if (product.title in cart) {
@@ -13,7 +17,7 @@ export default function Item({ product, cart, setCart }) {
 
   return (
     <div className={style.product}>
-        <img src={product.image} alt={product.title}></img>
+      <img src={product.image} alt={product.title}></img>
       <div>
         <h3>{product.title}</h3>
         <h2>${product.price}</h2>
