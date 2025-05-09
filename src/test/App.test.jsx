@@ -2,10 +2,11 @@ import { describe, it, vi, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
+import { Context } from "../component/routes/Context.jsx";
 import Catalog from "../component/home/Catalog";
+import Navbar from "../component/routes/Navbar.jsx";
 
 describe("Add to Cart", () => {
-
   const productList = [
     {
       id: 1,
@@ -21,16 +22,27 @@ describe("Add to Cart", () => {
       },
     },
   ];
-  
-  it("updates cart state", async () => {
-    const user = userEvent.setup();
-    const mock = vi.fn();
-    render(
+
+  const customRender = (ui, { providerProps }) => {
+    console.log({ ui });
+    return render(
       <BrowserRouter>
-        <Catalog productList={productList} cart={{}} setCart={mock}/>
+        <Context.Provider {...providerProps}>{ui}</Context.Provider>
       </BrowserRouter>
     );
-  
+  };
+  const mock = vi.fn();
+  const cart = { stuff: 4 };
+  const props = {
+    value: {
+      products: [productList, mock],
+      cartItems: [cart, mock],
+    },
+  };
+
+  it("updates cart state", async () => {
+    const user = userEvent.setup();
+    customRender(<Catalog />, { providerProps: props });
     const firstButton = screen.getByRole("button", { name: "Add to Cart" });
     await user.click(firstButton);
 
@@ -38,6 +50,8 @@ describe("Add to Cart", () => {
   });
 
   it("displays correct number of items in navbar cart", () => {
-    expect(false).toBe(false);
+    customRender(<Navbar />, { providerProps: props });
+    const cartDisplay = screen.getByTitle("Items in Cart");
+    expect(cartDisplay.textContent).toBe('4');
   });
 });

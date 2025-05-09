@@ -6,7 +6,7 @@ export default function Item({ product}) {
   const { cartItems } = React.useContext(Context);
   const [cart, setCart] = cartItems;
   const addProduct = () => {
-    const copy = cart;
+    const copy = { ...cart };
     if (product.title in cart) {
       copy[product.title]++;
     } else {

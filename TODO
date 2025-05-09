@@ -1,5 +1,3 @@
-rerender navbar cartItem number when click add to cart
-pass test where cartNumber is correct for random number like 8 items
 use cart(name+num) and productList(pic) to make orderlist
 test to see if orderlist contains all items in cart (search screen name and put in expect(list))
 increment/decrement and change amt cart  (prob a context function)
@@ -14,4 +12,3 @@ test to calculate correct subtotal
 optional
 test to see if catalog items render (search names and put in expect(list))
 dark mode
-Change js to ts
