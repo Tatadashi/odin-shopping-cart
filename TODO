@@ -1,8 +1,4 @@
-use cart(name+num) and productList(pic) to make orderlist
-calculate subtotal (make sure to do rerendering if needed like navbar cart)
-
 test to see if orderlist contains all items in cart (search screen name and put in expect(list))
-increment/decrement and change amt cart  (prob a context function)
 test to see if change amt works (get number from input) and 1 more see if removes (make sure screen not have it)
 test to see if adds (get number from input value)
 decrement button removes item from cart at 0
