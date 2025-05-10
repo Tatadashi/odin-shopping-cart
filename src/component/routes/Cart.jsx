@@ -1,18 +1,26 @@
-import style from '../../style/routes/Cart.module.css';
-import React from 'react';
+import style from "../../style/routes/Cart.module.css";
+import React from "react";
 import Navbar from "./Navbar.jsx";
-import Order from '../cart/Order.jsx';
-import Subtotal from '../cart/Subtotal.jsx';
+import Order from "../cart/Order.jsx";
+import Subtotal from "../cart/Subtotal.jsx";
+import { Context } from "./Context.jsx";
 
 export default function Cart() {
-    return (
-      <div>
-        <Navbar />
-        <div className={style.content}>
-          {/** orderlist need gap btwn orders*/}
-          <Order />
-          <Subtotal />
-        </div>
+  const { cartItems } = React.useContext(Context);
+  const [cart] = cartItems;
+  return (
+    <div>
+      <Navbar />
+      <div className={style.content}>
+        <ul className={style.orderList}>
+          {Object.keys(cart).map((item, index) => (
+            <li key={index}>
+              <Order productName={item} />
+            </li>
+          ))}
+        </ul>
+        <Subtotal />
       </div>
-    );
+    </div>
+  );
 }

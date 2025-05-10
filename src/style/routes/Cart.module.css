@@ -3,3 +3,12 @@
     grid-template-columns: 6fr 4fr;
     gap: 30px;
 }
+
+.orderList {
+    margin: 0;
+    padding: 0px;
+}
+
+.orderList li {
+    list-style: none;
+}

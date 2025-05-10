@@ -20,7 +20,7 @@ export default function Item({ product}) {
       <img src={product.image} alt={product.title}></img>
       <div>
         <h3 role="productName">{product.title}</h3>
-        <h2>${product.price}</h2>
+        <h2>${product.price.toFixed(2)}</h2>
         <button onClick={addProduct}>Add to Cart</button>
       </div>
     </div>
