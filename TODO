@@ -10,5 +10,4 @@ test to calculate correct subtotal
 
 
 optional
-test to see if catalog items render (search names and put in expect(list))
 dark mode
