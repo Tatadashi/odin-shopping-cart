@@ -60,7 +60,7 @@ describe("Load Catalog", () => {
   ];
 
   const mock = vi.fn();
-  const cart = { };
+  const cart = {};
   const props = {
     value: {
       products: [productList, mock],
@@ -124,6 +124,6 @@ describe("Add to Cart", () => {
   it("displays correct number of items in navbar cart", () => {
     customRender(<Navbar />, { providerProps: props });
     const cartDisplay = screen.getByTitle("Items in Cart");
-    expect(cartDisplay.textContent).toBe('4');
+    expect(cartDisplay.textContent).toBe("4");
   });
 });

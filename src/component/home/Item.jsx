@@ -2,7 +2,7 @@ import style from "../../style/home/Item.module.css";
 import React from "react";
 import { Context } from "../routes/Context";
 
-export default function Item({ product}) {
+export default function Item({ product }) {
   const { cartItems } = React.useContext(Context);
   const [cart, setCart] = cartItems;
   const addProduct = () => {

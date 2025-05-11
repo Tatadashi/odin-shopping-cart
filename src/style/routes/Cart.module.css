@@ -1,14 +1,26 @@
 .content {
-    display: grid;
-    grid-template-columns: 6fr 4fr;
-    gap: 30px;
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  gap: 30px;
 }
 
 .orderList {
-    margin: 0;
-    padding: 0px;
+  margin: 0;
+  padding: 0px;
 }
 
 .orderList li {
-    list-style: none;
+  list-style: none;
+}
+
+@media only screen and (max-width: 960px) {
+  .content {
+    grid-template-columns: 7fr 3fr;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
 }

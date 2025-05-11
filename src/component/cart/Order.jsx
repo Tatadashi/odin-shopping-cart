@@ -68,7 +68,9 @@ export default function Order({ productName }) {
         <h3 role="productName">{productName}</h3>
       </div>
       <div className={style.details}>
-        <button className={style.remove} onClick={remove}>Remove from Cart</button>
+        <button className={style.remove} onClick={remove}>
+          Remove from Cart
+        </button>
         <h3>${product.price.toFixed(2)}</h3>
         <div className={style.amount}>
           <button onClick={decrement}>-</button>

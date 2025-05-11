@@ -1,7 +1,19 @@
 .cart {
-    text-align: right;
+  text-align: right;
 }
 
 .cart button {
+  background-color: #3f66d9;
+}
+
+@media (prefers-color-scheme: light) {
+  .cart button {
     background-color: lemonchiffon;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .cart {
+    text-align: left;
+  }
 }

@@ -1,7 +1,7 @@
-import App from '../App.jsx'
-import ErrorPage from './Error.jsx';
-import Cart from './Cart.jsx';
-import { ContextProvider } from './ContextProvider.jsx';
+import App from "../App.jsx";
+import ErrorPage from "./Error.jsx";
+import Cart from "./Cart.jsx";
+import { ContextProvider } from "./ContextProvider.jsx";
 
 const routes = [
   {

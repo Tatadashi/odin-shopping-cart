@@ -119,16 +119,16 @@ describe("Increment/Decrement and Change/Remove Amount of Item", () => {
     expect(mock).toHaveBeenCalledTimes(2);
   });
 
-    it("updates cart state with change input", async () => {
-      const user = userEvent.setup();
-      customRender(<Order productName={"Mens Cotton Jacket"} />, {
-        providerProps: props,
-      });
-    const input = screen.getByRole("spinbutton");
-      await user.type(input, "5");
-      expect(mock).toHaveBeenCalledTimes(3);
+  it("updates cart state with change input", async () => {
+    const user = userEvent.setup();
+    customRender(<Order productName={"Mens Cotton Jacket"} />, {
+      providerProps: props,
     });
-  
+    const input = screen.getByRole("spinbutton");
+    await user.type(input, "5");
+    expect(mock).toHaveBeenCalledTimes(3);
+  });
+
   it("updates cart state with remove cart", async () => {
     const user = userEvent.setup();
     customRender(<Order productName={"Mens Cotton Jacket"} />, {
@@ -149,46 +149,51 @@ describe("Increment/Decrement and Change/Remove Amount of Item", () => {
 });
 
 describe("Render correct total of certain item", () => {
-    const mock = vi.fn();
-    const cart = {
-      "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops": 6,
-      "Mens Cotton Jacket": 100,
-    };
-    const props = {
-      value: {
-        products: [productList, mock],
-        cartItems: [cart, mock],
-      },
-    };
-  
-    const correctTotal = (55.99 * 100).toFixed(2);
-  
+  const mock = vi.fn();
+  const cart = {
+    "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops": 6,
+    "Mens Cotton Jacket": 100,
+  };
+  const props = {
+    value: {
+      products: [productList, mock],
+      cartItems: [cart, mock],
+    },
+  };
+
+  const correctTotal = (55.99 * 100).toFixed(2);
+
   it("displays correct total", () => {
-    customRender(<Order productName={"Mens Cotton Jacket"} />, { providerProps : props})
+    customRender(<Order productName={"Mens Cotton Jacket"} />, {
+      providerProps: props,
+    });
     const total = screen.getByRole("total");
     expect(total.textContent).toBe(`$${correctTotal}`);
   });
-  
 });
 
 describe("Render correct Subtotal, Tax, and Total", () => {
   const mock = vi.fn();
-   const cart = {
-     "Mens Cotton Jacket": 7,
-   };
-  const props = {
-     value: {
-       products: [productList, mock],
-       cartItems: [cart, mock],
-     },
+  const cart = {
+    "Mens Cotton Jacket": 7,
   };
-  
+  const props = {
+    value: {
+      products: [productList, mock],
+      cartItems: [cart, mock],
+    },
+  };
+
   //each jacket is $55.99
   const correctSubtotal = (55.99 * 7).toFixed(2);
-  const correctTax = (correctSubtotal * 0.105).toFixed(2); 
+  const correctTax = (correctSubtotal * 0.105).toFixed(2);
   //shipping is $10
-  const correctTotal = (Number(correctSubtotal) + Number(correctTax) + 10).toFixed(2)
-  
+  const correctTotal = (
+    Number(correctSubtotal) +
+    Number(correctTax) +
+    10
+  ).toFixed(2);
+
   it("renders subtotal", () => {
     customRender(<Subtotal />, { providerProps: props });
     const subtotal = screen.getByRole("subtotal");

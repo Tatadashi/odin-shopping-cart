@@ -32,10 +32,7 @@ export default function Catalog() {
     <div className={style.catalog}>
       {productList &&
         productList.map((product) => (
-          <Item
-            key={product.id}
-            product={product}
-          />
+          <Item key={product.id} product={product} />
         ))}
     </div>
   );

@@ -1,48 +1,75 @@
 .order {
-    border-right: 5px solid black;
-    display: grid;
-    grid-template-rows: 100px 40px;
-    padding: 10px;
+  border-right: 5px solid;
+  border-color: gainsboro;
+  display: grid;
+  grid-template-rows: 100px 40px;
+  padding: 10px;
 }
 
 .order img {
-    object-fit: contain;
-    width: 20%;
-    height: 90%;
+  object-fit: contain;
+  width: 20%;
+  height: 90%;
 }
 
 .top,
 .details {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
 }
 
 .details {
-    justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .amount {
-    border: 1px solid black;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    padding: 5px;
+  border: 1px solid;
+  border-color: gainsboro;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 5px;
 }
 
 .details button {
-    background-color: gainsboro;
-    border-radius: 50px;
-    padding-block: 0px;
-    padding-inline: 5px;
+  border-radius: 50px;
+  padding-block: 0px;
+  padding-inline: 5px;
 }
 
 .remove {
-    font-size: 14;
+  background-color: #e51010;
+  font-size: 11;
 }
 
 .input {
-    height: 20px;
-    width: 45px;
+  height: 20px;
+  width: 45px;
+}
+
+@media (prefers-color-scheme: light) {
+  .order {
+    border-color: gainsboro;
+  }
+
+  .amount {
+    border-color: black;
+  }
+
+  .remove {
+    background-color: #f46767;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .order {
+    border-right: 0px;
+    padding-inline: 2px;
+  }
+
+  .details {
+    gap: 4px;
+  }
 }
