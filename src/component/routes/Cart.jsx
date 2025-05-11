@@ -14,7 +14,7 @@ export default function Cart() {
       <div className={style.content}>
         <ul className={style.orderList}>
           {Object.keys(cart).map((item, index) => (
-            <li key={index}>
+            <li role="order" key={index}>
               <Order productName={item} />
             </li>
           ))}

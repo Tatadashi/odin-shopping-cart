@@ -38,9 +38,9 @@ export default function Subtotal() {
     return (
       <div className={style.cart}>
         <h2>Shipping: $10.00</h2>
-        <h2>Subtotal: ${getSubtotal()}</h2>
-        <h2>Tax: ${getTax(getSubtotal())} </h2>
-        <h2>Total: ${getTotal()}</h2>
+        <h2 role='subtotal'>Subtotal: ${getSubtotal()}</h2>
+        <h2 role='tax'>Tax: ${getTax(getSubtotal())}</h2>
+        <h2 role='total'>Total: ${getTotal()}</h2>
         <button>Checkout</button>
       </div>
     );

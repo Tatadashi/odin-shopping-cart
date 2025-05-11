@@ -9,9 +9,8 @@ export default function Order({ productName }) {
 
   const remove = () => {
     const copy = { ...cart };
-    if (copy[productName] === 0) {
-      delete copy[productName];
-    }
+    delete copy[productName];
+    setCart(copy);
   };
 
   const increment = () => {
@@ -66,7 +65,7 @@ export default function Order({ productName }) {
     <div className={style.order}>
       <div className={style.top}>
         <img src={product.image} alt={productName} />
-        <h3>{productName}</h3>
+        <h3 role="productName">{productName}</h3>
       </div>
       <div className={style.details}>
         <button className={style.remove} onClick={remove}>Remove from Cart</button>
@@ -77,12 +76,14 @@ export default function Order({ productName }) {
             className={style.input}
             type="number"
             onChange={(e) => change(e)}
+            min="0"
+            max="9999"
             value={cart[productName]}
           ></input>
           <button onClick={increment}>+</button>
         </div>
         <h3>Total:</h3>
-        <h3>${getTotal()}</h3>
+        <h3 role="total">${getTotal()}</h3>
       </div>
     </div>
   );

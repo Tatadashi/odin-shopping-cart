@@ -1,10 +1,2 @@
-test to see if orderlist contains all items in cart (search screen name and put in expect(list))
-test to see if change amt works (get number from input) and 1 more see if removes (make sure screen not have it)
-test to see if adds (get number from input value)
-decrement button removes item from cart at 0
-test to see if it works (get number from input value) and 1 more to see if removes (make sure screen not have it)
-test to calculate correct subtotal
-
-
 optional
 dark mode

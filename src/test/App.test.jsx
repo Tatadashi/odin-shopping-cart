@@ -67,7 +67,7 @@ describe("Load Catalog", () => {
       cartItems: [cart, mock],
     },
   };
-  it("displays products from productList", () => {
+  it("displays products (name) from productList", () => {
     const productNames = [
       "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
       "Mens Casual Premium Slim Fit T-Shirts",
@@ -77,7 +77,7 @@ describe("Load Catalog", () => {
     const productElements = screen.getAllByRole("productName");
     expect(productElements.length).toBe(3);
 
-    //correct order pf appearance
+    //correct order of appearance
     productElements.forEach((element, index) => {
       const { getByText } = within(element);
       const name = productNames[index];
@@ -86,6 +86,7 @@ describe("Load Catalog", () => {
   });
 });
 
+//only test if cart state changes and displays correct value using a preset state
 describe("Add to Cart", () => {
   const productList = [
     {
